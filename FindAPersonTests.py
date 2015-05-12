@@ -14,6 +14,10 @@ class FindAPersonTests(unittest.TestCase):
     def test_getAllPostForMissingName(self):
         posts = self.crowdmap.get_all_posts_for("Joe")
         self.assertEquals([], posts)
+
+    def test_existingLocationInformationReturnsTrue(self):
+        location_exist = self.crowdmap.is_location_for_name("Or")
+        self.assertTrue(location_exist)
         
 if __name__ == '__main__':
     unittest.main()
