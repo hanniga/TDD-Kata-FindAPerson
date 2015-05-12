@@ -15,5 +15,10 @@ class FindAPersonTests(unittest.TestCase):
         posts = self.crowdmap.get_all_posts_for("Or")
         self.assertIn("Or", posts)
 
+    def test_getAllPostsForMissingName(self):
+        posts = self.crowdmap.get_all_posts_for("Or2")
+        self.assertNotIn("Or2", posts)
+
+
 if __name__ == '__main__':
     unittest.main()
