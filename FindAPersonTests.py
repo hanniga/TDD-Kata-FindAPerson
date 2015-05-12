@@ -1,11 +1,5 @@
 import unittest
-
-
-class Crowdmap(object):
-    def get_all_posts_for(self, param):
-        return ["Or"]
-
-
+from Crowdmap import Crowdmap
 
 class FindAPersonTests(unittest.TestCase):
     def setUp(self):
