@@ -1,7 +1,6 @@
 class Crowdmap(object):
     def __init__(self, init_list):
       self.list = init_list
-      self._location_service = LocationService()
     
     def get_all_posts_for(self, name):
         return [post for post in self.list if post.find(name) != -1]
@@ -17,6 +16,4 @@ class Crowdmap(object):
 		print '\n'+posts[0][x:x+4]
 		return len(posts) != len(posts1)
 
-class LocationService:
-    def find(self, text):
-        return (text.find("Bangkok") != -1)
+
