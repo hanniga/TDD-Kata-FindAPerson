@@ -18,9 +18,10 @@ class Crowdmap(object):
 
     def if_there_are_map_inconsistencies_all_name_place(self, name):
 		posts = [post for post in self.list if post.find(name) != -1 and post.find("at") != -1]
-		place=posts[0].index("at")+1
+		words=posts[0].split()
+		place=words.index("at")+1
 		print '\n'+str(place)
-		print '\n'+posts[0][place]
-		posts1 = [post for post in self.list if post.find(name) != -1 and post.find(posts[0][place]) != -1]
+		print '\n'+words[place]
+		posts1 = [post for post in self.list if post.find(name) != -1 and post.find(words[place]) != -1]
 		return len(posts) != len(posts1)
 
