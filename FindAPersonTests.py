@@ -22,18 +22,17 @@ class FindAPersonTests(unittest.TestCase):
     def test_existingLocationInformationReturnsTrue(self):
         location_exist = self.crowdmap.is_location_for_name("Or")
         self.assertTrue(location_exist)
-		
-	def test_if_there_are_map_inconsistencies(self):
-		location_exist = self.crowdmap.if_there_are_map_inconsistencies("Or A.")
-        self.assertTrue(location_exist)
 
-	def test_if_there_are_map_consistencies(self):
-		crowdmap_with_consistencies = crowdmap(["I met Or A. at AA house Bangkok",
-                                  "We found Or A. R.I.P at AA valley",
+    def test_if_there_are_map_inconsistencies(self):
+		location_exist = self.crowdmap.if_there_are_map_inconsistencies("Or A.")
+		self.assertTrue(location_exist)
+     
+    def test_if_there_are_map_consistencies(self):
+		crowdmap_with_consistencies = Crowdmap(["I met Or A. at BAB house Bangkok",
+                                  "We found Or A. R.I.P at AAA valley",
                                   "Missing Cowboy"])
-		location_exist = crowdmap_with_consistencies.if_there_are_map_inconsistencies("Or A.")
+		location_exist=crowdmap_with_consistencies.if_there_are_map_inconsistencies("Or A.")
 		self.assertFalse(location_exist)
-		
-        
+
 if __name__ == '__main__':
     unittest.main()
